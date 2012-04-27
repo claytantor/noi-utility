@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- Choose the dialect that matches your "dataSource" definition -->
+	<bean id="ApplicationSessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="mappingResources">
+			<list>			
+				<value>com/noi/utility/spring/Role.hbm.xml</value>
+				<value>com/noi/utility/spring/UserPrincipal.hbm.xml</value>
+				<value>com/noi/utility/hibernate/ImageValue.hbm.xml</value>				
+			</list>
+		</property>				
+		<property name="hibernateProperties">
+			<ref bean="HibernateDatabaseProperties"/>
+		</property>	
+		<property name="dataSource">
+			<ref bean="LocalDS"/>
+		</property>		
+	</bean>
+	
+	<bean id="ApplicationTransactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory"><ref local="ApplicationSessionFactory"/></property>
+	</bean>	
+	
+	
+</beans>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="com.noi.utility.spring">
+	<class name="UserPrincipal" table="user_principal">
+
+		<id name="id" column="id">
+			<generator class="native"/>
+		</id>
+		<property name="version" column="version" type="java.lang.Integer"/>
+		<property name="username" column="user_name" type="java.lang.String"/>		
+		<property name="password" column="password" type="java.lang.String"/>
+		<property name="email" column="email" type="java.lang.String"/>	
+		<property name="authGuid" column="guid" type="java.lang.String"/>	
+		<property name="userClass" column="user_class" type="java.lang.String"/>	
+			
+		<property name="expiredString" 
+			column="expired" type="java.lang.String" length="10"/>	
+			
+		<property name="credentialsExpiredString" 
+			column="credentials_expired" 
+			type="java.lang.String" 
+			length="10"/>		
+			
+		<property name="lockedString" 
+			column="locked" type="java.lang.String" length="10"/>	
+				
+		<property name="enabledString" 
+			column="enabled" type="java.lang.String" length="10"/>		
+					
+		<set name="roles"
+			lazy="false"
+			fetch="join"
+			cascade="none">
+			<key column="principal_id"/>
+			<one-to-many class="Role"/>
+		</set>			
+					
+	</class>
+</hibernate-mapping>

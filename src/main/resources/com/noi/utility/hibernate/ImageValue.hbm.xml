@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="com.noi.utility.hibernate">
+	<class name="ImageValue" table="image_value">
+		<id name="id" column="id" type="java.lang.Long">
+			<generator class="native"/>
+		</id>
+
+	  <property name="imageBlob" type="blob">
+             <column name="image" sql-type="BLOB"/>
+      </property> 
+	  
+	  <property name="contentType" column="content_type" type="java.lang.String"/>
+	  <property name="filename" column="filename" type="java.lang.String"/>
+	  <property name="type" column="type" type="java.lang.String"/>
+	  
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-2.0.1.xsd">
+
+ <!-- <beans:bean id="UserPrincipalService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">	
+		<beans:property name="transactionManager" ref="ApplicationTransactionManager"/>
+		<beans:property name="target" ref="UserPrincipalServiceTarget"/>
+		<beans:property name="transactionAttributes">
+			<beans:props>
+				<beans:prop key="load*">PROPAGATION_REQUIRED,readOnly, -UsernameNotFoundException</beans:prop>
+				<beans:prop key="save*">PROPAGATION_REQUIRED, -UserPrincipalServiceException</beans:prop>
+				<beans:prop key="delete*">PROPAGATION_REQUIRED, -UserPrincipalServiceException</beans:prop>
+			</beans:props>
+		</beans:property>
+	</beans:bean>
+	
+	<beans:bean id="UserPrincipalServiceTarget" 
+		lazy-init="true" 
+		class="com.noi.utility.spring.PrincipalBasedUserDetailsService">
+		<beans:property name="userPrincipalDao" ref="UserPrincipalDao"/>
+		<beans:property name="roleDao" ref="RoleDao"/>
+	</beans:bean>
+	
+    <beans:bean id="UserPrincipalDao" 
+		lazy-init="true" 
+		class="com.noi.utility.spring.HibernateUserPrincipalDao">
+		<beans:property name="sessionFactory" ref="ApplicationSessionFactory"/>
+	</beans:bean>
+
+
+	
+	<beans:bean id="RoleDao" 
+		lazy-init="true" 
+		class="com.noi.utility.spring.HibernateRoleDao">
+		<beans:property name="sessionFactory" ref="ApplicationSessionFactory"/>
+	</beans:bean> -->
+	
+	
+</beans:beans>

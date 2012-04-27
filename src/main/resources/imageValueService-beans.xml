@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- <bean id="ImageValueService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">	
+		<property name="transactionManager"><ref bean="ApplicationTransactionManager"/></property>
+		<property name="target"><ref local="ImageValueServiceTarget"/></property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="ImageValueServiceTarget" class="com.noi.utility.spring.service.ImageValueServiceImpl">
+		<property name="imageValueDao"><ref bean="ImageValueDao"/></property>	
+	</bean> --> 
+	
+</beans>
